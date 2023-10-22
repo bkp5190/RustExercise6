@@ -48,8 +48,16 @@ fn main() {
     // Hint: Define the generic type between the function name and open paren:
     //       fn function_name<T: Bite>(...)
     //
-    //bunny_nibbles(&mut carrot);
-    //println!("Bunny nibbles for awhile: {:?}", carrot);
+    bunny_nibbles(&mut carrot);
+    println!("Bunny nibbles for awhile: {:?}", carrot);
+}
+
+fn bunny_nibbles<T: Bite>(item: &mut T) {
+    item.bite();
+    item.bite();
+    item.bite();
+    item.bite();
+    item.bite();
 }
 
 #[derive(Debug)] // This enables using the debugging format string "{:?}"
